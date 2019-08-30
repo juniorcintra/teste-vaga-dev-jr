@@ -57,14 +57,28 @@ $candidatos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 					<th scope="row"><?= $value["id"] ?></th>
 					<td><?= $value["nome"] ?></td>
 					<td><?= $value["email"] ?></td>
-					<td>
-						<center><input type="checkbox" class="custom-control-input" id="destaque" name="destaque"><label class="custom-control-label" style="float: none;" for="destaque"></label></center>
+					<td class="text-center">
+						<input class="checkbox" type='checkbox' id='ativo<?= $value['id'] ?>' data-id='<?= $value['id'] ?>' data-tbl='candidatos' data-idTbl='id' name='ativo' <?= $value['ativo'] == 1 ? "checked" : "" ?>>
+						<label for='ativo<?= $value['id'] ?>'></label>
 					</td>
-					<td></td>
-				</tr>
-			<?php endforeach; ?>
-		</tbody>
-	</table>
+					<td>
+						<?php if ($value["lixeira"] == 1): ?>
+							<button type="button" name="restaura" data-id="<?= $value['id'] ?>" data-tbl="candidatos" data-id-tbl="id" class="btn btn-default btn-rounded btn-icon btn-restaurar">
+							<span class="fa fa-undo"></span>
+						</button>
+						<?php else: ?>
+							<a href="form-candidatos.php?id=<?= $value['id'] ?>" class="btn btn-light btn-rounded btn-icon">
+								<span class="fa fa-pencil"></span>
+							</a>
+							<button type="button" name="lixeira" data-id="<?= $value['id'] ?>" data-tbl="candidatos" data-id-tbl="id" class="btn btn-light btn-rounded btn-icon btn-lixeira">
+							<span class="fa fa-trash"></span>
+						</button>
+					<?php endif ?>
+				</td>
+			</tr>
+		<?php endforeach; ?>
+	</tbody>
+</table>
 
 </body>
 </html>

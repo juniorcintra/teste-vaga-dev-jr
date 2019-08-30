@@ -53,46 +53,46 @@ $candidato = $stmt->fetch(PDO::FETCH_ASSOC);
       <input type="hidden" name="id" value="<?php if($id != '') {echo $id;} else {echo '';}?>">
       <div class="form-group">
         <label for="nome">Nome: </label>
-        <input type="text" class="form-control w-100" id="nome" name="nome" aria-describedby="emailHelp" placeholder="Nome" required="">
+        <input type="text" class="form-control w-100" id="nome" name="nome" aria-describedby="emailHelp" placeholder="Nome" required="" value="<?= (isset($candidato['nome'])) ? $candidato['nome'] : null ?>">
       </div>
       <div class="form-group">
         <label for="email">Email: </label>
-        <input type="email" class="form-control w-100" id="email" name="email" placeholder="E-mail" required="">
+        <input type="email" class="form-control w-100" id="email" name="email" placeholder="E-mail" required="" value="<?= (isset($candidato['email'])) ? $candidato['email'] : null ?>">
       </div>
       <div  style="display: flex;">
         <div class="form-group">
           <label for="telefone">Telefone:</label>
-          <input type="text" class="form-control w-100" id="telefone" name="telefone" placeholder="Telefone">
+          <input type="text" class="form-control w-100" id="telefone" name="telefone" placeholder="Telefone" value="<?= (isset($candidato['telefone'])) ? $candidato['telefone'] : null ?>">
         </div>
         <div class="form-group">
           <label for="celular" class="ml-2">Celular:</label>
-          <input type="text" class="form-control w-100 ml-2" id="celular" name="celular" placeholder="Celular">
+          <input type="text" class="form-control w-100 ml-2" id="celular" name="celular" placeholder="Celular" value="<?= (isset($candidato['celular'])) ? $candidato['celular'] : null ?>">
         </div>
       </div>
       <div  style="display: flex;">
         <div class="form-group">
           <label for="data">Nascimento:</label>
-          <input type="date" class="form-control w-100" id="data" name="data" required="">
+          <input type="date" class="form-control w-100" id="data" name="data" required="" value="<?= (isset($candidato['dtNascimento'])) ? $candidato['dtNascimento'] : null ?>">
         </div>
         <div class="form-group">
           <label for="salario" class="ml-2">Pretensão Salarial:</label>
-          <input type="text" class="form-control w-100 ml-2" id="salario" name="salario" placeholder="Pretensão Salarial" required="">
+          <input type="text" class="form-control w-100 ml-2" id="salario" name="salario" placeholder="Pretensão Salarial" required="" value="<?= (isset($candidato['pretSalario'])) ? $candidato['pretSalario'] : null ?>">
         </div>
       </div>
       <div class="form-group">
         <label for="resumo">Resumo de Habilidades e Experiências</label>
-        <textarea class="form-control" id="resumo" name="resumo" rows="3"></textarea>
+        <textarea class="form-control" id="resumo" name="resumo" rows="3"> <?= (isset($candidato['drNascimento'])) ? $candidato['drNascimento'] : null ?> </textarea>
       </div>
       <div class="custom-control custom-checkbox mr-sm-2">
-        <input type="checkbox" class="custom-control-input" id="faculdade" name="faculdade">
+        <input type="checkbox" class="custom-control-input" id="faculdade" name="faculdade" <?= $value['faculdade'] == 1 ? "checked" : "" ?>>
         <label class="custom-control-label" for="faculdade">Faz Faculdade</label>
       </div>
       <div class="custom-control custom-checkbox mr-sm-2">
-        <input type="checkbox" class="custom-control-input" id="ativo" name="ativo">
+        <input type="checkbox" class="custom-control-input" id="ativo" name="ativo" <?= $value['ativo'] == 1 ? "checked" : "" ?>>
         <label class="custom-control-label" for="ativo">Ativo</label>
       </div>
       <div class="custom-control custom-checkbox mr-sm-2">
-        <input type="checkbox" class="custom-control-input" id="destaque" name="destaque">
+        <input type="checkbox" class="custom-control-input" id="destaque" name="destaque" <?= $value['destaque'] == 1 ? "checked" : "" ?>>
         <label class="custom-control-label" for="destaque">Destaque</label>
       </div>
       <input type="hidden" name="acao" value="<?php if($id != ''){ echo 'edit';} else {echo 'insert';} ?>">
@@ -103,6 +103,7 @@ $candidato = $stmt->fetch(PDO::FETCH_ASSOC);
     </form>
 
     <!-- Jquery Mask -->
+    <script type="text/javascript" src="../js/checkbox.js"></script>
     <script type="text/javascript" src="../js/jquery.mask.js"></script>
     <script type="text/javascript">
       $(document).ready(function() {
