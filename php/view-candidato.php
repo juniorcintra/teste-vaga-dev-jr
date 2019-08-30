@@ -12,7 +12,7 @@ $id = isset($_GET["id"]) ? $_GET["id"] : "";
 
 $PDO = db_connect();
 
-$sql = 'SELECT nome, email, telefone, celular, DATE_FORMAT(dtNascimento,"%d/%m/%Y") as data, faculdade, pretSalario, resumoHab, ativo, destaque, DATE_FORMAT(dtCadastro,"%d/%m/%Y") as cadastro  FROM candidatos WHERE id = :id';
+$sql = 'SELECT nome, email, telefone, celular, DATE_FORMAT(dtNascimento,"%d/%m/%Y") as data, faculdade, pretSalario, resumoHab, ativo, destaque, DATE_FORMAT(dtCadastro,"%d/%m/%Y %H:%i:%s") as cadastro  FROM candidatos WHERE id = :id';
 $stmt = $PDO->prepare($sql);
 $stmt->bindParam(':id', $id);
 $stmt->execute();
@@ -43,15 +43,15 @@ $candidato = $stmt->fetch(PDO::FETCH_ASSOC);
   <h1>Informações do Candidato: <?= $candidato['nome'] ?></h1>
 
   <div>
-    <p>Nome: <?= $candidato['nome'] ?></p>
-    <p>E-mail: <?= $candidato['email'] ?></p>
-    <p>Telefone: <?= $candidato['telefone'] ?></p>
-    <p>Celular: <?= $candidato['celular'] ?></p>
-    <p>Data de Nascimento: <?= $candidato['data'] ?></p>
-    <p>Faz faculdade? <?= $candidato['faculdade'] == 1 ? "Sim" : "Não"; ?></p>
-    <p>Pretensão Salarial: <?= $candidato['pretSalario'] ?></p>
-    <p>Resumo de Habilidades: <?= $candidato['resumoHab'] ?></p>
-    <p>Cadastrado em: <?= $candidato['cadastro'] ?></p>
+    <p><strong>Nome:</strong> <?= $candidato['nome'] ?></p>
+    <p><strong>E-mail:</strong> <?= $candidato['email'] ?></p>
+    <p><strong>Telefone:</strong> <?= $candidato['telefone'] ?></p>
+    <p><strong>Celular:</strong> <?= $candidato['celular'] ?></p>
+    <p><strong>Data de Nascimento:</strong> <?= $candidato['data'] ?></p>
+    <p><strong>Faz faculdade?</strong> <?= $candidato['faculdade'] == 1 ? "Sim" : "Não"; ?></p>
+    <p><strong>Pretensão Salarial:</strong> <?= $candidato['pretSalario'] ?></p>
+    <p><strong>Resumo de Habilidades:</strong> <?= $candidato['resumoHab'] ?></p>
+    <p><strong>Cadastrado em:</strong> <?= $candidato['cadastro'] ?></p>
   </div>
 
   <!-- Jquery Mask -->
