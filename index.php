@@ -27,7 +27,7 @@ require 'php/functions.php';
 
 	<?php if (isLoggedIn()): ?>
 		<div class="alert alert-success" role="alert" style="width: 400px;margin: 0 auto;">
-			<p>Olá, <?php echo $_SESSION['user_name']; ?>. <a href="php/panel.php"><button type="button" class="btn btn-outline-primary">Painel de Candidatos</button></a> <a href="php/panel-usuarios.php"><button type="button" class="btn btn-outline-primary">Painel de Usuários</button></a> | <a href="php/logout.php"><button type="button" class="btn btn-outline-danger">Sair</button></a></p>
+			<p>Olá, <?php echo $_SESSION['user_name']; ?>. <a href="php/panel-candidatos.php"><button type="button" class="btn btn-outline-primary">Painel de Candidatos</button></a> <a href="php/panel-usuarios.php"><button type="button" class="btn btn-outline-primary">Painel de Usuários</button></a> | <a href="php/logout.php"><button type="button" class="btn btn-outline-danger">Sair</button></a></p>
 		</div>
 		
 		<?php else: ?>

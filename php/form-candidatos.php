@@ -81,7 +81,7 @@ $candidato = $stmt->fetch(PDO::FETCH_ASSOC);
       </div>
       <div class="form-group">
         <label for="resumo">Resumo de Habilidades e Experiências</label>
-        <textarea class="form-control" id="resumo" name="resumo" rows="3"> <?= (isset($candidato['drNascimento'])) ? $candidato['drNascimento'] : null ?> </textarea>
+        <textarea class="form-control" id="resumo" name="resumo" rows="3"> <?= (isset($candidato['resumoHab'])) ? $candidato['resumoHab'] : null ?> </textarea>
       </div>
       <div class="custom-control custom-checkbox mr-sm-2">
         <input type="checkbox" class="custom-control-input" id="faculdade" name="faculdade" <?= $candidato['faculdade'] == 1 ? "checked" : "" ?>>
@@ -98,7 +98,7 @@ $candidato = $stmt->fetch(PDO::FETCH_ASSOC);
       <input type="hidden" name="acao" value="<?php if($id != ''){ echo 'edit';} else {echo 'insert';} ?>">
       <div class="btn-group" role="group" aria-label="Basic example">
         <button type="submit" class="btn btn-primary">Enviar</button>
-        <a href="panel.php" id="voltarCandi"><button type="button" class="btn btn-secondary">Voltar</button></a>
+        <a href="panel-candidatos.php" id="voltarCandi"><button type="button" class="btn btn-secondary">Voltar</button></a>
       </div>
     </form>
 
