@@ -6,3 +6,13 @@
 .align{
 	padding-top: 20%;
 }
+
+.align-panel{
+	padding-top: 2%;
+}
+#formCandi{
+	border: 1px solid #40E0D0;
+	width: 700px;
+	margin: 10px auto;
+	padding: 10px;
+}

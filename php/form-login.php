@@ -16,7 +16,7 @@
 
 <body class="text-center">
 
-    <form class="form-signin" action="login.php" method="post">
+    <form class="form-signin" action="login.php" method="POST">
         <img src="../images/phplogo.png">
         <label for="email" class="sr-only">E-mail</label>
         <input type="email" id="email" name="email" class="form-control" placeholder="E-mail" required autofocus>

@@ -4,7 +4,7 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-:root {
+ :root {
   --blue: #007bff;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -80,7 +80,6 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   margin-top: 0;
-  margin-bottom: 1rem;
 }
 
 abbr[title],
@@ -224,6 +223,9 @@ th {
 label {
   display: inline-block;
   margin-bottom: 0.5rem;
+  float: left;
+  margin-right: 10px;
+  line-height: 35px;
 }
 
 button {
@@ -2021,7 +2023,6 @@ textarea.form-control {
 .form-check {
   position: relative;
   display: block;
-  padding-left: 1.25rem;
 }
 
 .form-check-input {
@@ -3649,6 +3650,7 @@ input[type="button"].btn-block {
   position: relative;
   margin-bottom: 0;
   vertical-align: top;
+  line-height: 23px;
 }
 
 .custom-control-label::before {
@@ -7840,6 +7842,10 @@ button.bg-dark:focus {
 
 .w-25 {
   width: 25% !important;
+}
+
+.w-30 {
+  width: 30% !important;
 }
 
 .w-50 {

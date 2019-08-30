@@ -1,9 +1,7 @@
 <?php
  
-// inclui o arquivo de inicialização
 require 'functions.php';
  
-// resgata variáveis do formulário
 $email = isset($_POST['email']) ? $_POST['email'] : '';
 $senha = isset($_POST['senha']) ? $_POST['senha'] : '';
  
@@ -13,7 +11,6 @@ if (empty($email) || empty($senha))
     exit;
 }
  
-// cria o hash da senha
 $senhaHash = make_hash($senha);
  
 $PDO = db_connect();
@@ -34,7 +31,6 @@ if (count($users) <= 0)
     exit;
 }
  
-// pega o primeiro usuário
 $user = $users[0];
  
 session_start();

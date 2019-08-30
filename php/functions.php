@@ -18,7 +18,7 @@ function db_connect()
  
 function make_hash($str)
 {
-    return sha1(md5($str));
+    return md5($str);
 }
  
 
