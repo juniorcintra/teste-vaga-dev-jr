@@ -95,6 +95,9 @@ $candidatoslixeira = $stmt->fetchAll(PDO::FETCH_ASSOC);
 								<i class="fa fa-undo"></i>
 							</button>
 							<?php else: ?>
+								<a href="view-candidato.php?id=<?= $value['id'] ?>" class="btn btn-light btn-rounded btn-icon">
+									<i class="far fa-eye"></i>
+								</a>
 								<a href="form-candidatos.php?id=<?= $value['id'] ?>" class="btn btn-light btn-rounded btn-icon">
 									<i class="fas fa-edit"></i>
 								</a>
