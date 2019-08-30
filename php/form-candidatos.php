@@ -49,7 +49,8 @@ $candidato = $stmt->fetch(PDO::FETCH_ASSOC);
       <h1>Novo Candidato</h1>
     <?php endif ?>
 
-    <form id="formCandi" action="candidatos_inc.php" method="POST">
+    <form id="formCandi" action="candidatos_inc.php" method="POST" enctype="multipart/form-data">
+      <input type="hidden" name="id" value="<?php if($id != '') {echo $id;} else {echo '';}?>">
       <div class="form-group">
         <label for="nome">Nome: </label>
         <input type="text" class="form-control w-100" id="nome" name="nome" aria-describedby="emailHelp" placeholder="Nome" required="">
@@ -83,17 +84,18 @@ $candidato = $stmt->fetch(PDO::FETCH_ASSOC);
         <textarea class="form-control" id="resumo" name="resumo" rows="3"></textarea>
       </div>
       <div class="custom-control custom-checkbox mr-sm-2">
-        <input type="checkbox" class="custom-control-input" id="faculdade">
+        <input type="checkbox" class="custom-control-input" id="faculdade" name="faculdade">
         <label class="custom-control-label" for="faculdade">Faz Faculdade</label>
       </div>
       <div class="custom-control custom-checkbox mr-sm-2">
-        <input type="checkbox" class="custom-control-input" id="ativo">
+        <input type="checkbox" class="custom-control-input" id="ativo" name="ativo">
         <label class="custom-control-label" for="ativo">Ativo</label>
       </div>
       <div class="custom-control custom-checkbox mr-sm-2">
-        <input type="checkbox" class="custom-control-input" id="destaque">
+        <input type="checkbox" class="custom-control-input" id="destaque" name="destaque">
         <label class="custom-control-label" for="destaque">Destaque</label>
       </div>
+      <input type="hidden" name="acao" value="<?php if($id != ''){ echo 'edit';} else {echo 'insert';} ?>">
       <div class="btn-group" role="group" aria-label="Basic example">
         <button type="submit" class="btn btn-primary">Enviar</button>
         <a href="panel.php" id="voltarCandi"><button type="button" class="btn btn-secondary">Voltar</button></a>
@@ -104,7 +106,6 @@ $candidato = $stmt->fetch(PDO::FETCH_ASSOC);
     <script type="text/javascript" src="../js/jquery.mask.js"></script>
     <script type="text/javascript">
       $(document).ready(function() {
-
         $("#telefone").mask("(99)9999-9999");
         $("#celular").mask("(99)99999-9999");
         $("#salario").mask("R$9.999,99")
