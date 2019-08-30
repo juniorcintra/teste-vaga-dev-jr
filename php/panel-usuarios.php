@@ -50,6 +50,7 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	<p>Bem-vindo ao seu painel, <?php echo $_SESSION['user_name']; ?> | <a href="logout.php"><button type="button" class="btn btn-outline-danger">Sair</button></a></p>
 
 	<p><a href="form-usuarios.php"><button type="button" class="btn btn-outline-primary">Novo Usuario</button></p></a>
+	<p><a href="panel-candidatos.php"><button type="button" class="btn btn-outline-primary">Painel de Candidatos</button></p></a>
 
 
 	<h2>Usuarios Existentes</h2>
