@@ -108,7 +108,7 @@ $candidato = $stmt->fetch(PDO::FETCH_ASSOC);
       $(document).ready(function() {
         $("#telefone").mask("(99)9999-9999");
         $("#celular").mask("(99)99999-9999");
-        $("#salario").mask("R$9.999,99")
+        $("#salario").mask("R$99.999,99")
       });
     </script>
 
