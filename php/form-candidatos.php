@@ -84,15 +84,15 @@ $candidato = $stmt->fetch(PDO::FETCH_ASSOC);
         <textarea class="form-control" id="resumo" name="resumo" rows="3"> <?= (isset($candidato['drNascimento'])) ? $candidato['drNascimento'] : null ?> </textarea>
       </div>
       <div class="custom-control custom-checkbox mr-sm-2">
-        <input type="checkbox" class="custom-control-input" id="faculdade" name="faculdade" <?= $value['faculdade'] == 1 ? "checked" : "" ?>>
+        <input type="checkbox" class="custom-control-input" id="faculdade" name="faculdade" <?= $candidato['faculdade'] == 1 ? "checked" : "" ?>>
         <label class="custom-control-label" for="faculdade">Faz Faculdade</label>
       </div>
       <div class="custom-control custom-checkbox mr-sm-2">
-        <input type="checkbox" class="custom-control-input" id="ativo" name="ativo" <?= $value['ativo'] == 1 ? "checked" : "" ?>>
+        <input type="checkbox" class="custom-control-input" id="ativo" name="ativo" <?= $candidato['ativo'] == 1 ? "checked" : "" ?>>
         <label class="custom-control-label" for="ativo">Ativo</label>
       </div>
       <div class="custom-control custom-checkbox mr-sm-2">
-        <input type="checkbox" class="custom-control-input" id="destaque" name="destaque" <?= $value['destaque'] == 1 ? "checked" : "" ?>>
+        <input type="checkbox" class="custom-control-input" id="destaque" name="destaque" <?= $candidato['destaque'] == 1 ? "checked" : "" ?>>
         <label class="custom-control-label" for="destaque">Destaque</label>
       </div>
       <input type="hidden" name="acao" value="<?php if($id != ''){ echo 'edit';} else {echo 'insert';} ?>">

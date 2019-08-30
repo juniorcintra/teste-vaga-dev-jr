@@ -50,7 +50,8 @@ if ($_POST["acao"] == "insert") {
 			':pretSalario' => $salario,
 			':resumoHab' => $resumo,
 			':ativo' => $ativo,
-			':destaque' => $destaque
+			':destaque' => $destaque,
+			':id' => $id
 		));
 		echo "<script>alert('Cadastro atualizado com sucesso!');</script>";
 		header('Location: panel.php');
