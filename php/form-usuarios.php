@@ -56,11 +56,11 @@ $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
       </div>
       <div class="form-group">
         <label for="senha">Senha: </label>
-        <input type="password" class="form-control w-100" id="senha" name="senha" placeholder="Senha" required="" value="">
+        <input type="password" class="form-control w-100" id="senha" name="senha" placeholder="Senha">
       </div>
       <div class="form-group">
         <label for="senha2">Verifique a Senha: </label>
-        <input type="password" class="form-control w-100" id="senha2" name="senha2" placeholder="Verifique a Senha" required="" value="">
+        <input type="password" class="form-control w-100" id="senha2" name="senha2" placeholder="Verifique a Senha" >
       </div>
       <input type="hidden" name="acao" value="<?php if($id != ''){ echo 'edit';} else {echo 'insert';} ?>">
       <div class="btn-group" role="group" aria-label="Basic example">

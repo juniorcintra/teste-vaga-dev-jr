@@ -20,7 +20,7 @@ if ($_POST["acao"] == "insert") {
 				':senha' => make_hash($senha)
 			));
 			echo "<script>alert('Cadastro realizado com sucesso!');</script>";
-			header('Location: panel.php');
+			header('Location: ../index.php');
 		} catch(PDOException $e) {
 			echo 'Error: ' . $e->getMessage();
 		}
@@ -35,7 +35,8 @@ if ($_POST["acao"] == "insert") {
 			$stmt->execute(array(
 				':nome' => $nome,
 				':email' => $email,
-				':senha' => make_hash($senha)
+				':senha' => make_hash($senha),
+				':id' => $id
 			));
 			echo "<script>alert('Cadastro atualizado com sucesso!');</script>";
 			header('Location: panel-usuarios.php');
@@ -48,7 +49,8 @@ if ($_POST["acao"] == "insert") {
 			$stmt = $PDO->prepare('UPDATE users SET name = :nome, email = :email WHERE id = :id');
 			$stmt->execute(array(
 				':nome' => $nome,
-				':email' => $email
+				':email' => $email,
+				':id' => $id
 			));
 			echo "<script>alert('Cadastro atualizado com sucesso!');</script>";
 			header('Location: panel-usuarios.php');
