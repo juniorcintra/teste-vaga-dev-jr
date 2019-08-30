@@ -1,8 +1,12 @@
 <?php
 session_start();
  
-require_once 'init.php';
-require 'check.php';
+require 'functions.php';
+
+if (!isLoggedIn())
+{
+    header('Location: form-login.php');
+}
 ?>
 <!DOCTYPE html>
 <html>

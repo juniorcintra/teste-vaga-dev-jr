@@ -1,7 +1,7 @@
 <?php
  
 // inclui o arquivo de inicialização
-require 'init.php';
+require 'functions.php';
  
 // resgata variáveis do formulário
 $email = isset($_POST['email']) ? $_POST['email'] : '';

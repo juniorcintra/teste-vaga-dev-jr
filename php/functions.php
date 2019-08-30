@@ -32,10 +32,7 @@ function isLoggedIn()
     return true;
 }
 
-if (!isLoggedIn())
-{
-    header('Location: form-login.php');
-}
+
 
 
 ?>
