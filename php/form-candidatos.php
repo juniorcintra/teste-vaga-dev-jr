@@ -103,7 +103,6 @@ $candidato = $stmt->fetch(PDO::FETCH_ASSOC);
     </form>
 
     <!-- Jquery Mask -->
-    <script type="text/javascript" src="../js/checkbox.js"></script>
     <script type="text/javascript" src="../js/jquery.mask.js"></script>
     <script type="text/javascript">
       $(document).ready(function() {

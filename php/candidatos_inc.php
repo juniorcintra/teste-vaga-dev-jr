@@ -54,7 +54,7 @@ if ($_POST["acao"] == "insert") {
 			':id' => $id
 		));
 		echo "<script>alert('Cadastro atualizado com sucesso!');</script>";
-		header('Location: panel.php');
+		header('Location: panel-candidatos.php');
 	} catch(PDOException $e) {
 		echo 'Error: ' . $e->getMessage();
 

@@ -53,6 +53,21 @@ Ufa! Acho já temos o que preciso! Agora mãos a obra!
 
 
 
+### Para executar o projeto:
+
+Foi desenvolvido utilizando PHP7, conexão com Banco de Dados MySQL, feita com PDO. Para auxílio no front-end foi utilizado o framework Bootstrap 4, com icones FontAwesome.
+
+Para executar, basta criar o banco 'vaga_dev' e executar o arquivo sql.
+
+Para excutar o projeto, deve se executar o comando 'php -S localhost:8000' dentro da pasta do projeto, abrir o navegador e digitar o endereço 'localhost:8000'.
+
+Caso tenha o apache instalado, basta apenas mover os arquivos para a pasta do seu servidor e executar no navegador.
+
+Na primeira tela do sistema, já é verificado se há um login ativo, se sim, ele direciona para os painéis, se não, ele solicita o login, caso exista usuário, e o cadastro caso não haja usuário cadastrado ainda.
+
+
+
+
 
 
 
