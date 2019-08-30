@@ -48,7 +48,8 @@ $candidatos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 				<th scope="col">Nome</th>
 				<th scope="col">E-mail</th>
 				<th scope="col">Destaque</th>
-				<th scope="col">Status</th>
+				<th scope="col">Ativo</th>
+				<th scope="col">Ação</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -57,6 +58,10 @@ $candidatos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 					<th scope="row"><?= $value["id"] ?></th>
 					<td><?= $value["nome"] ?></td>
 					<td><?= $value["email"] ?></td>
+					<td class="text-center">
+						<input class="checkbox" type='checkbox' id='destaque<?= $value['id'] ?>' data-id='<?= $value['id'] ?>' data-tbl='candidatos' data-idTbl='id' name='destaque' <?= $value['destaque'] == 1 ? "checked" : "" ?>>
+						<label for='destaque<?= $value['id'] ?>'></label>
+					</td>
 					<td class="text-center">
 						<input class="checkbox" type='checkbox' id='ativo<?= $value['id'] ?>' data-id='<?= $value['id'] ?>' data-tbl='candidatos' data-idTbl='id' name='ativo' <?= $value['ativo'] == 1 ? "checked" : "" ?>>
 						<label for='ativo<?= $value['id'] ?>'></label>
