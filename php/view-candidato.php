@@ -54,9 +54,16 @@ $candidato = $stmt->fetch(PDO::FETCH_ASSOC);
     <p><strong>Cadastrado em:</strong> <?= $candidato['cadastro'] ?></p>
   </div>
 
+  <p>
+    <button id="btnVoltar" class="btn btn-outline-primary" style="margin-top: 15px;">Voltar</button>
+  </p>
+
   <!-- Jquery Mask -->
   <script type="text/javascript" src="../js/jquery.mask.js"></script>
   <script type="text/javascript">
+    $("#btnVoltar").on("click", function(){
+      window.history.back();
+    });
     $(document).ready(function() {
       $("#telefone").mask("(99)9999-9999");
       $("#celular").mask("(99)99999-9999");
